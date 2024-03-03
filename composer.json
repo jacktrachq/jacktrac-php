@@ -1,8 +1,9 @@
 {
     "name": "jacktrac/jacktrac-php",
+    "description": "",
     "autoload": {
         "psr-4": {
-            "Ian\\JacktracPhp\\": "src/"
+            "JackTrac\\Client\\": "src/"
         }
     },
     "authors": [
