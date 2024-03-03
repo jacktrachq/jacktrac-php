@@ -1,11 +1,23 @@
 <?php
 
-require_once('Jacktrac.php');
+require_once('src/Client.php');
 
-$api = new Jacktrac('https://jacktrac.com/v1', true);
+// Initialize the JackTrac client
+$client = new JackTrac\Client('JACKTRAC_URL');
 
-$token = ''; // Place your token here!
-$r = $api->get_device_logs($token, 'xxx');
-echo '<pre>';
-print_r($r);
-echo '</pre>';
+try {
+    // Specify the device ID for which you want to retrieve logs
+    $device_id = 'DEVICE_ID';
+
+    // Fetch logs for the specified device
+    $devices = $client->get_device_logs('YOUR_TOKEN', $device_id)->data;
+
+    // Output the logs
+    foreach ($devices as $device) {
+        foreach ($device->logs as $log) {
+          echo $log->DateTime . "\n";
+        }
+    }
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+}

@@ -1,6 +1,8 @@
 <?php
 
-class Jacktrac {
+namespace Jacktrac;
+
+class Client {
 
   var $debug;
   var $url;

@@ -25,18 +25,20 @@ Then run ```composer install``` to install the required package.
 require 'vendor/autoload.php';
 
 // Initialize the JackTrac client
-$client = new JackTrac\Client('YOUR_API_KEY');
+$client = new JackTrac\Client('JACKTRAC_URL');
 
 try {
     // Specify the device ID for which you want to retrieve logs
     $device_id = 'DEVICE_ID';
 
     // Fetch logs for the specified device
-    $logs = $client->get_device_logs($device_id);
+    $devices = $client->get_device_logs('YOUR_TOKEN', $device_id)->data;
 
     // Output the logs
-    foreach ($logs as $log) {
-        echo $log['timestamp'] . ': ' . $log['data'] . "\n";
+    foreach ($devices as $device) {
+        foreach ($device->logs as $log) {
+          echo $log->DateTime . "\n";
+        }
     }
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
