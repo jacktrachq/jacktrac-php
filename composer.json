@@ -1,0 +1,15 @@
+{
+    "name": "jacktrac/jacktrac-php",
+    "autoload": {
+        "psr-4": {
+            "Ian\\JacktracPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jacktrac",
+            "email": "info@jacktrac.com"
+        }
+    ],
+    "require": {}
+}
