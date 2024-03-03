@@ -11,12 +11,12 @@ To begin using the JackTrac PHP API, follow these steps:
 ```json
 {
     "require": {
-        "jacktrac/jacktrac-php": "^1.0"
+        "jacktrac/jacktrac-php": "^0.1"
     }
 }
 ```
 
-Then run ```composer install``` to install the required package.
+Then run ```composer install``` to install the required package. Or simple ```composer require jacktrac/jacktrac-php```
 
 3. **Usage**: Use the following example to get device log data:
 
